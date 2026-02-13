@@ -1,0 +1,235 @@
+/* Styling CV page */
+/* Use border-box in all elements. */
+*
+{
+  box-sizing: border-box;
+}
+
+
+.main-header{
+      text-align:center; /*enter address link with image for more orgnized  apperance */
+      line-height: .5; /* reduce line hegith to reduce space reserved for image and header section*/
+      text-decoration: none;
+      word-spacing: -3px; /* reduce space between words to bring elements to the center*/
+      letter-spacing: -0.5px; /* reduce space between letters to bring elements to the center*/
+      
+
+}
+
+ body
+   {
+     font-family: "Source Code Pro", monospace,Arial, Helvetica, sans-serif; /* Use Google Font for modern monospace look and font stack as backup fonts */
+     font-size: 16px; /* Set a base font size */
+     margin:2rem;
+     padding:2rem;
+     color: #010301; /* black color for the text */
+     background-color:#fdfcfc;  /* Set light silver color for  background  appearance */
+     border:2px solid #c7c9c7; /* add a solid border with ligth color */
+     border-radius: 15px;
+
+}  
+h1{
+    font-size:2.0rem;/* set large outstanding color for h1*/
+    text-align:center; /* align text to center*/
+    text-shadow:3px 3px 5px rgba(83, 91, 101, 0.7); /* add drop shadow effect */
+    
+
+}
+h2{
+
+    font-size:1.6rem; /* sat a moderate font size revelent to view port*/
+    font-weight:600;/* make it slightly bolder for differentiation*/
+    text-transform:uppercase; /* transform text to uper case*/
+}
+h3
+{
+  font-size: 1.2rem; /* A size between h1 and p */
+}
+/* add padding below headers clear layout */
+h1, h2, h3
+{
+  padding-bottom: 1rem;
+}
+p,li, table, form /* set unified fnot size for  li, table, form*/
+{
+  font-size: 1rem;
+}
+
+a
+{
+  text-decoration: none; /* Removing default underline from links */
+  color: #0c06d2; /* A slightly lighter shade for links for better distinction */
+}
+a:visited{
+       color:rgb(69, 78, 145); /* light blue  color for visited link to differentiate  visted link */
+      text-decoration: none;
+
+}
+
+
+
+/* Separate sections with margins to utilize collapsing margins. Also, use borders to space them apart. */
+main section,
+footer section
+{
+  margin: 4rem 0;
+  border-top: 2px solid #e1e2e8;
+}
+
+/* Adjust form elements to capture same look and feel. */
+form input,
+form textarea,
+form select
+{
+  margin: 0.3rem 0.3rem; /*add margin  set space between from elements */
+  padding: 0.2rem 0.2rem;/*add margin  set space between from elements */
+  color: #120101;
+  border: 2px dotted #dddfdd;
+  background-color: #f4f7fa;
+}
+form fieldset
+{
+  border: none;
+}
+
+form button
+{
+  padding: 0.5rem 1rem;
+  color: #090a09;
+  border: 2px solid #e1e5ef;
+  background-color: #d2eaf5;
+}
+
+/* Remove outlines from form elements, ensuring a cleaner look. */
+form input,
+form textarea
+{
+  outline: none;
+
+}
+
+/* Make the profile picture rounded, and add a border. */
+.main-header img 
+{
+  border-radius: 50%;
+}
+
+
+/* E2.3 css update code*/
+
+.main-header section
+{
+  display:flex;
+  justify-content: space-between; /* postion item a long the x-axis with equal space in between . */
+  height: 20rem;
+}
+
+/* === HEADER - Introduction SECTION === */
+header section .image-container
+{
+  align-self: flex-start; /* Positions itself to the start of y-axis. */
+
+  /* Equal width and height Makes the image shape square. */
+  width: 15rem;
+  height: 15rem;
+}
+
+header section .image-container img
+{
+  display: block;
+
+  /* Fits the image into the container div. */
+  width: 100%;
+  height: 100%;
+
+  border-radius: 50%; /* Rounds the image. */
+
+  object-fit: cover; /* Preserves the original aspect ratio. */
+  object-position: 100% 20%; /* Makes the face visible moving the image down. */
+}
+
+header section .name-container
+{
+  align-self: center; /* Positions itself to the center of y-axis. */
+}
+
+header section .information-container
+{
+  align-self: flex-end; /* Positions itself to the end of y-axis. */
+  text-align:left; /*align information text to the left */
+}
+
+/* === MAIN - Tools SECTION === */
+.tools .container
+{
+  display: flex;
+  justify-content: center;
+}
+
+
+/* === MAIN - Contact SECTION === */
+.contact .form-container
+{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.contact .text-input-container,
+.contact .select-container,
+.contact .checkbox-container
+{
+  display: flex;
+  width: 30rem;
+  margin-bottom: 1rem;
+}
+
+.contact .text-input-container label,
+.contact .select-container label
+{
+  flex-grow: 1;
+}
+
+.contact .text-input-container input,
+.contact .text-input-container textarea,
+.contact .select-container select
+{
+  width: 20rem;
+}
+
+.contact .text-input-container textarea
+{
+  height: 10rem;
+}
+
+.contact .button-container
+{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.contact .button-container button[type=reset]
+{
+  margin-right: 1rem;
+}
+
+
+
+
+
+/* === HELPERS === */
+.border-dotted
+{
+  border: 2px dotted #c2c4c2;
+}
+
+
+/* =========================================================
+   Project 1 Final: Mobile (<=480px) + Animations Upgrade
+   
+   Notes:
+   - Keeps  existing layout
+   - Fixes header overflow on small screens
+   - Makes table mobile-safe
+   - Adds animations
+   ========================================================= */
