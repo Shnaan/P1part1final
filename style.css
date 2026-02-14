@@ -1,15 +1,15 @@
 /* Styling CV page */
-/* Use border-box in all elements. */
-*
+
+* /* Universal selector  targeting every single element on the page  */
 {
-  box-sizing: border-box;
+  box-sizing: border-box; /* include border and pading in width and height ensuring more predictable layout*/
 }
 
 
 .main-header{
       text-align:center; /*enter address link with image for more orgnized  apperance */
-      line-height: .5; /* reduce line hegith to reduce space reserved for image and header section*/
-      text-decoration: none;
+      line-height: .5; /* reduce line hegith to reduce space reserved for name and address text line on header section*/
+      /* text-decoration: none; remove undeline from anchor link */
       word-spacing: -3px; /* reduce space between words to bring elements to the center*/
       letter-spacing: -0.5px; /* reduce space between letters to bring elements to the center*/
       
@@ -20,21 +20,21 @@
    {
      font-family: "Source Code Pro", monospace,Arial, Helvetica, sans-serif; /* Use Google Font for modern monospace look and font stack as backup fonts */
      font-size: 16px; /* Set a base font size */
-     margin:2rem;
+     /* margin:2rem;  replaced in updated css in the bottom for more responsive layout*/
      padding:2rem;
      color: #010301; /* black color for the text */
-     background-color:#fdfcfc;  /* Set light silver color for  background  appearance */
-     border:2px solid #c7c9c7; /* add a solid border with ligth color */
+     background-color:#f4f5f8;  /* Set light silver color for  background  appearance */
+     border:2px solid #dbdddb; /* add a solid border with ligth color */
      border-radius: 15px;
 
 }  
 h1{
     font-size:2.0rem;/* set large outstanding color for h1*/
     text-align:center; /* align text to center*/
-    text-shadow:3px 3px 5px rgba(83, 91, 101, 0.7); /* add drop shadow effect */
-    
+    text-shadow: 2px 3px 4px #383535; /* add shadow 2px x-aixs offset and 3px y-axis offset  4px blur radius ()*/
 
 }
+
 h2{
 
     font-size:1.6rem; /* sat a moderate font size revelent to view port*/
@@ -45,7 +45,7 @@ h3
 {
   font-size: 1.2rem; /* A size between h1 and p */
 }
-/* add padding below headers clear layout */
+/* add padding below headers to make layout more clear */
 h1, h2, h3
 {
   padding-bottom: 1rem;
@@ -58,11 +58,11 @@ p,li, table, form /* set unified fnot size for  li, table, form*/
 a
 {
   text-decoration: none; /* Removing default underline from links */
-  color: #0c06d2; /* A slightly lighter shade for links for better distinction */
+  color: #0c06d2; /* A slightly lighter shade for links for better distinction from text*/
 }
 a:visited{
-       color:rgb(69, 78, 145); /* light blue  color for visited link to differentiate  visted link */
-      text-decoration: none;
+       color:rgb(73, 79, 125); /* light blue  color for visited link to differentiate  visted link */
+      text-decoration: none;/* remove undeline from anchor's link  */
 
 }
 
@@ -76,13 +76,13 @@ footer section
   border-top: 2px solid #e1e2e8;
 }
 
-/* Adjust form elements to capture same look and feel. */
+/* Adjust form elements to share same look and feel. */
 form input,
 form textarea,
 form select
 {
-  margin: 0.3rem 0.3rem; /*add margin  set space between from elements */
-  padding: 0.2rem 0.2rem;/*add margin  set space between from elements */
+  margin: 0.3rem 0.3rem; /*add margin  set space between form elements */
+  padding: 0.2rem 0.2rem;/*add pading  set space between form elements */
   color: #120101;
   border: 2px dotted #dddfdd;
   background-color: #f4f7fa;
@@ -104,24 +104,19 @@ form button
 form input,
 form textarea
 {
-  outline: none;
+  outline: none; /*Removes the default blue glow showed when click an input.*/
 
 }
 
-/* Make the profile picture rounded, and add a border. */
-.main-header img 
-{
-  border-radius: 50%;
-}
 
 
 /* E2.3 css update code*/
 
 .main-header section
 {
-  display:flex;
+  display:flex; /* turn section into flexbox container set image name and contact info sit side by side in a row*/
   justify-content: space-between; /* postion item a long the x-axis with equal space in between . */
-  height: 20rem;
+  height: 20rem; 
 }
 
 /* === HEADER - Introduction SECTION === */
@@ -136,7 +131,7 @@ header section .image-container
 
 header section .image-container img
 {
-  display: block;
+  display: block; /*Removes the tiny gap that usually appears under images*/
 
   /* Fits the image into the container div. */
   width: 100%;
@@ -144,18 +139,18 @@ header section .image-container img
 
   border-radius: 50%; /* Rounds the image. */
 
-  object-fit: cover; /* Preserves the original aspect ratio. */
-  object-position: 100% 20%; /* Makes the face visible moving the image down. */
+  object-fit: cover; /* If the image dimensions don't match the container, this crops the image */
+  object-position: 100% 20%; /* Moves the image within its frame. It shifts it horizontally and vertically) to ensure the face is visible.. */
 }
 
 header section .name-container
 {
-  align-self: center; /* Positions itself to the center of y-axis. */
+  align-self: center; /* name sticks to the middle. */
 }
 
 header section .information-container
 {
-  align-self: flex-end; /* Positions itself to the end of y-axis. */
+  align-self: flex-end; /* information text stick to the bottom */
   text-align:left; /*align information text to the left */
 }
 
@@ -228,8 +223,146 @@ header section .information-container
    Project 1 Final: Mobile (<=480px) + Animations Upgrade
    
    Notes:
-   - Keeps  existing layout
-   - Fixes header overflow on small screens
-   - Makes table mobile-safe
+   - Existing layout not changed
    - Adds animations
    ========================================================= */
+
+   /* ---------- Animation: links + buttons ---------- */
+   
+body {
+  
+     max-width: 1100px;/* reduce width with max-width   */
+     margin: 2rem auto; /* set left and right margin to auto to center the page and take less space in mobile or small size resposive layout */
+}
+
+a {
+     position: relative;
+     transition: opacity 150ms ease;
+}
+
+a:hover {
+  opacity: 0.85;
+}
+
+/* Add  underline animation */
+a::after { /*::after "Pseudo-element" creates a fake, invisible element right after the link text*/
+  content: "";
+  position: absolute; /* Allows us to place this fake element exactly where we want it (under the text). */
+  /* It starts at width: 0% (invisible). When  hover (a:hover::after), it changes to width: 100%.
+   The transition makes it grow smoothly from left to right.*/
+   /* this animation source from google search */
+  left: 0;
+  bottom: -2px;
+  height: 2px;
+  width: 0%;
+  background: currentColor;
+  opacity: 0.6;
+  transition: width 180ms ease;
+}
+
+a:hover::after {
+  width: 100%;
+}
+
+/* Button hover,prees and active animation */
+form button {
+  transition: transform 160ms ease, opacity 160ms ease;
+}
+
+form button:hover {
+  transform: translateY(-2px);
+  opacity: 0.95;
+}
+
+form button:active {
+  transform: translateY(0) scale(0.98);
+}
+
+
+/* profile image hover animation */
+header section .image-container img {
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+/* add shadow effect when  hover triggerd*/
+header section .image-container img:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+}
+
+
+
+/*this is the fix for first/left column hidden on mobile*/
+/* solution: ovride flex behavior change display to block work for me and was sugested by ChatGPT*/
+/* === Fix: table first/left column hidden on mobile === */
+.tools .container.table-wrap {
+  display: block;            /*Earlier in  code, .container was set to display: flex to center things. On mobile(<= 480px display responsive width)
+   but Changing this back to block gives the table its own space and fix the issue of the hidden left column*/
+  
+   width: 100%;/* ensures the "table-wrap" is exactly as wide as the phone screen, but never wider(max-width: 100%). */
+  max-width: 100%;
+  overflow-x: auto; /* this tell the browser If the table inside is wider than this container, don't let it overlap the edge of the screen. Instead, add a horizontal scrollbar."*/
+  
+}
+
+
+
+
+
+/* ---------- Mobile breakpoint (<= 480px) ---------- */
+@media (max-width: 480px) {
+
+  body {
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  /*  items vertically by force the items to
+   stack on top of each other by set flex-direction to column and justify and align to center. */
+  .main-header section {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+  header section .image-container {
+    /* increase photo contaner size  */
+    width: 9rem;
+    height: 9rem;
+  }
+
+  header section .information-container {
+    align-self: center;
+    text-align: center;
+    line-height: 1.2; /* increase line heigth to match mobile size  */
+  }
+
+  /* Reduce spacing between sections */
+  main section,
+  footer section {
+    margin: 2rem 0;
+  }
+
+  /* Make contact form fit small screens */
+  .contact .text-input-container,
+  .contact .select-container,
+  .contact .checkbox-container {
+    width: 100%;
+    flex-direction: column;
+    gap: 0.35rem; /*  sets  gaps (also called gutters) between rows and columns.  */
+  }
+
+  .contact .text-input-container input,
+  .contact .text-input-container textarea,
+  .contact .select-container select {
+    width: 100%;
+  }
+
+  /* stretch button to full width to look good in mobile size not samller */
+  .contact .button-container {
+    justify-content: stretch;
+    gap: 0.75rem;
+  }
+
+  .contact .button-container button {
+    width: 100%;
+  } }
