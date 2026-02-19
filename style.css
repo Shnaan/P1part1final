@@ -7,8 +7,8 @@
 
 
 .main-header{
-      text-align:center; /*enter address link with image for more orgnized  apperance */
-      line-height: .5; /* reduce line hegith to reduce space reserved for name and address text line on header section*/
+        text-align:center; /*enter address link with image for more orgnized  apperance */
+         line-height: .5; /* reduce line hegith to reduce space reserved for name and address text line on header section*/
       /* text-decoration: none; remove undeline from anchor link */
       word-spacing: -3px; /* reduce space between words to bring elements to the center*/
       letter-spacing: -0.5px; /* reduce space between letters to bring elements to the center*/
